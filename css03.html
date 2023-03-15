@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습 - 구조 선택자</title>
+    <style>
+    /*형제요소*/
+    h2+ul{list-style: square;} /*인접(next) 요소 선택자*/
+    ul+ul{list-style: circle;}
+    h2~ul{border:3px solid gold;} /*인접(nextAll) 요소들 선택자*/
+    .con li{text-decoration: underline;} /*조상 후손*/
+    .com>ul>li{border-bottom:2px solid red;} /*부모 > 자식*/
+    /*순서 위치 선택자*/
+    li:first-child{color: silver;} /*첫번째 요소, 그 태그 붙은 것 중에 해당 순서에 해당되는 요소에 적용*/
+    li:last-child{color: yellow;} /*마지막 요소*/
+    li:nth-child(2){color: purple;} /*2번째 요소*/
+    li:only-child{font-style: italic; color: brown;} /*독자적 요소*/
+    li:nth-child(2n){background-color: green;} /*짝수번째만 서식 적용*/
+    li:nth-child(2n+1){background-color: deeppink;} /*홀수번째만 서식 적용*/
+    li:first-of-type{padding-left: 120px;} /*첫번째가 li인 요소에 적용됨(순서 중요)*/
+    /*last-of-type, nth-of-type, only-off-type 등도 있음*/
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h2>div요소 안의 목록 요소</h2>
+        <ul class="1st1">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul>
+        <ul class="1st2">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul>
+    </div>
+    <hr>
+    <article>
+        <h2>article요소 안의 목록</h2>
+        <ul>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ul>
+        <ol>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ol>
+    </article>
+    <div class="con" title="자식이 없는 요소"></div>
+    <div class="con">여기는 내용
+        <p title="내용이 없는 요소"></p>
+    </div>
+</body>
+</html>
